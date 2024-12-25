@@ -13,6 +13,12 @@
       name: mysqld
       state: started
       enabled: yes
+  - name: install python mysql dependencies
+    ansible.builtin.pip:
+      name:
+      - PyMySQL
+      - cryptography #To use passwords in command line we need to install cryptography
+      executable: pip3.9 #pip3.11 if python version is 3.11 
   # Check root password already set up or not
   - name: check db connections
     community.mysql.mysql_info:
