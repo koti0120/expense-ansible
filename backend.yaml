@@ -41,12 +41,12 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
 
-  - name: install python mysql dependencies-1
+  - name: install python mysql dependencies
     ansible.builtin.pip:
       name:
-      - PyMySQL #to connect mysql db from ansible
+      - PyMySQL
       - cryptography
-    executable: pip3.9
+      executable: pip3.9 # pip3.11 if python version is 3.11
   - name: import data to mysql
     community.mysql.db_mysql:
       login_user: root
