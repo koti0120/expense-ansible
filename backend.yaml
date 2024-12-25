@@ -40,8 +40,8 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
-      
-  - name: install python mysql dependencies
+
+  - name: install python mysql dependencies-1
     ansible.builtin.pip:
       name:
       - PyMySQL #to connect mysql db from ansible
