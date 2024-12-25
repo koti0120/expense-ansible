@@ -47,6 +47,7 @@
       - PyMySQL
       - cryptography
       executable: pip3.9 # pip3.11 if python version is 3.11
+      
   - name: import data to mysql
     community.mysql.db_mysql:
       login_user: root
